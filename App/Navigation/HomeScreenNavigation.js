@@ -8,8 +8,8 @@ const Stack = createNativeStackNavigator();
 
 const HomeScreenNavigation = () => {
   return (
-    <Stack.Navigator>
-        <Stack.Screen name='chat' component={HomeScreen}></Stack.Screen>
+    <Stack.Navigator screenOptions={{headerShown:false}}>
+        <Stack.Screen name='home' component={HomeScreen}></Stack.Screen>
         <Stack.Screen name='chat' component={ChatScreen}></Stack.Screen>
 
 

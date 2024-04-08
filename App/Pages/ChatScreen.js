@@ -4,7 +4,13 @@ import React from 'react'
 const ChatScreen = () => {
   return (
     <View>
-      <Text>ChatScreen</Text>
+          <GiftedChat
+      messages={messages}
+      onSend={messages => onSend(messages)}
+      user={{
+        _id: 1,
+      }}
+    />
     </View>
   )
 }

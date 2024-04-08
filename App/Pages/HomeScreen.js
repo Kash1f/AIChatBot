@@ -1,11 +1,13 @@
 import { View, Text, Image, FlatList, TouchableOpacity, Dimensions } from "react-native";
 import React, { useEffect, useState } from "react";
 import ChatFaceData from "../Services/ChatFaceData";
+import { useNavigation } from "@react-navigation/native";
 
 
 const HomeScreen = () => {
   const [chatFaceData, setChatFaceData] = useState([]);
   const [selectedChatFaceData, setSelectedChatFaceData] = useState([]);
+  const navigation=useNavigation();
 
   useEffect(() => {
     setChatFaceData(ChatFaceData);
@@ -60,7 +62,8 @@ const HomeScreen = () => {
     <Text style={{marginTop:5, fontSize:17, color:'#B0B0B0'}}>Choose your Chat Buddy</Text>
 
       </View>
-            <TouchableOpacity style={[{backgroundColor:selectedChatFaceData.primary}, {marginTop:40, padding:17, borderRadius:100, width:Dimensions.get('screen').width*0.6, alignItems:'center',
+      <TouchableOpacity onPress={()=>navigation.navigate('chat')}
+             style={[{backgroundColor:selectedChatFaceData.primary}, {marginTop:40, padding:17, borderRadius:100, width:Dimensions.get('screen').width*0.6, alignItems:'center',
             marginTop:50
           }]}>
                 <Text style={{fontSize:16,color:'#fff'}}>Let's Chat</Text>
